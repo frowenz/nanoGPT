@@ -79,8 +79,8 @@ config = {k: globals()[k] for k in config_keys} # will be useful for logging
 # -----------------------------------------------------------------------------
 
 dtype = 'float32'
-batch_size /= gradient_accumulation_steps # scale batch size to account for gradient accumulation
 gradient_accumulation_steps = 4
+batch_size //= gradient_accumulation_steps
 
 # various inits, derived attributes, I/O setup
 ddp = int(os.environ.get('RANK', -1)) != -1 # is this a ddp run?
