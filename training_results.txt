@@ -17,4 +17,4 @@ Final loss: 2.5265)
 Model Config:Layers: 6
 Embeddings: 384
 Context: 256
---------------------------
+------------------------- -
