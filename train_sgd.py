@@ -253,9 +253,6 @@ raw_model = model.module if ddp else model # unwrap DDP container if needed
 running_mfu = -1.0
 while True:
 
-    scheduler.step()  # This will update the learning rate for this iteration
-    lr = scheduler.get_last_lr()[0]  # To get the current learning rate for logging or any other purpose
-
     # evaluate the loss on train/val sets and write checkpoints
     if iter_num % eval_interval == 0 and master_process:
         losses = estimate_loss()
@@ -307,6 +304,10 @@ while True:
     # step the optimizer and scaler if training in fp16
     scaler.step(optimizer)
     scaler.update()
+
+    scheduler.step()  # This will update the learning rate for this iteration
+    lr = scheduler.get_last_lr()[0]  # To get the current learning rate for logging or any other purpose
+
     # flush the gradients as soon as we can, no need for this memory anymore
     optimizer.zero_grad(set_to_none=True)
 
