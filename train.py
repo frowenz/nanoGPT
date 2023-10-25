@@ -243,6 +243,8 @@ if wandb_log and master_process:
     import wandb
     wandb.init(project=wandb_project, name=wandb_run_name, config=config)
 
+start_time = time.time()
+
 # training loop
 X, Y = get_batch('train') # fetch the very first batch
 t0 = time.time()
@@ -328,6 +330,33 @@ while True:
     # termination conditions
     if iter_num > max_iters:
         break
+
+end_time = time.time()
+total_time = end_time - start_time
+print(f"Total training time: {total_time:.2f} seconds")
+print(f"Maxmum amount of memory used: {torch.cuda.max_memory_reserved() / 1e9:.02f} GB")
+print(f"Final loss: {lossf:.4f})\n")
+
+results_file = "training_results.txt"
+
+# Read the contents of the config_file
+with open(config_file, 'r') as cf:
+    config_contents = cf.read()
+
+with open(results_file, 'a') as f:
+    f.write(f"Config: {os.path.basename(config_file)}\n")
+    f.write(f"File: {os.path.basename(__file__)}\n")
+
+    f.write(f"Total training time: {total_time:.2f} seconds\n")
+    f.write(f"Maxmum amount of memory used: {torch.cuda.max_memory_reserved() / 1e9:.02f} GB\n\n")
+    f.write(f"Final loss: {lossf:.4f}\n")
+
+    f.write("Model Config:")
+    f.write(f"Layers: {n_layer}\n")
+    f.write(f"Embeddings: {n_embd}\n")
+    f.write(f"Context: {block_size}\n")
+
+    f.write("--------------------------\n")
 
 if ddp:
     destroy_process_group()

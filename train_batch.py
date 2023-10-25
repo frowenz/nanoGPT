@@ -361,6 +361,5 @@ with open(results_file, 'a') as f:
 
     f.write("--------------------------\n")
 
-
 if ddp:
     destroy_process_group()
