@@ -18,3 +18,123 @@ Model Config:Layers: 6
 Embeddings: 384
 Context: 256
 ------------------------- -
+Config: train_shakespeare_char.py
+File: train_float16.py
+Total training time: 259.62 seconds
+Maxmum amount of memory used: 1.82 GB
+
+Final loss: 0.8168
+Model Config:Layers: 6
+Embeddings: 384
+Context: 256
+--------------------------
+Config: train_shakespeare_char_double_context.py
+File: train_float16.py
+Total training time: 500.87 seconds
+Maxmum amount of memory used: 3.43 GB
+
+Final loss: 0.5417
+Model Config:Layers: 6
+Embeddings: 384
+Context: 512
+--------------------------
+Config: train_shakespeare_char_double_embeddings.py
+File: train_float16.py
+Total training time: 650.20 seconds
+Maxmum amount of memory used: 3.91 GB
+
+Final loss: 0.3211
+Model Config:Layers: 6
+Embeddings: 768
+Context: 256
+--------------------------
+Config: train_shakespeare_char_double_layers.py
+File: train_float16.py
+Total training time: 486.41 seconds
+Maxmum amount of memory used: 3.53 GB
+
+Final loss: 0.3740
+Model Config:Layers: 12
+Embeddings: 384
+Context: 256
+--------------------------
+Config: train_shakespeare_char.py
+File: train_float32.py
+Total training time: 854.77 seconds
+Maxmum amount of memory used: 3.20 GB
+
+Final loss: 0.8124
+Model Config:Layers: 6
+Embeddings: 384
+Context: 256
+--------------------------
+Config: train_shakespeare_char_double_context.py
+File: train_float32.py
+Total training time: 1708.73 seconds
+Maxmum amount of memory used: 5.83 GB
+
+Final loss: 0.5420
+Model Config:Layers: 6
+Embeddings: 384
+Context: 512
+--------------------------
+Config: train_shakespeare_char_double_embeddings.py
+File: train_float32.py
+Total training time: 2771.21 seconds
+Maxmum amount of memory used: 5.89 GB
+
+Final loss: 0.3044
+Model Config:Layers: 6
+Embeddings: 768
+Context: 256
+--------------------------
+Config: train_shakespeare_char_double_layers.py
+File: train_float32.py
+Total training time: 1654.28 seconds
+Maxmum amount of memory used: 5.47 GB
+
+Final loss: 0.3811
+Model Config:Layers: 12
+Embeddings: 384
+Context: 256
+--------------------------
+Config: train_shakespeare_char.py
+File: train_sgd.py
+Total training time: 839.88 seconds
+Maxmum amount of memory used: 2.76 GB
+
+Final loss: 2.5818
+Model Config:Layers: 6
+Embeddings: 384
+Context: 256
+--------------------------
+Config: train_shakespeare_char_double_context.py
+File: train_sgd.py
+Total training time: 1693.31 seconds
+Maxmum amount of memory used: 5.38 GB
+
+Final loss: 2.5865
+Model Config:Layers: 6
+Embeddings: 384
+Context: 512
+--------------------------
+Config: train_shakespeare_char_double_embeddings.py
+File: train_sgd.py
+Total training time: 2758.52 seconds
+Maxmum amount of memory used: 5.72 GB
+
+Final loss: 2.5349
+Model Config:Layers: 6
+Embeddings: 768
+Context: 256
+--------------------------
+Config: train_shakespeare_char_double_layers.py
+File: train_sgd.py
+Total training time: 1652.79 seconds
+Maxmum amount of memory used: 5.37 GB
+
+Final loss: 2.5683
+Model Config:Layers: 12
+Embeddings: 384
+Context: 256
+--------------------------
