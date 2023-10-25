@@ -351,7 +351,7 @@ with open(results_file, 'a') as f:
 
     f.write(f"Total training time: {total_time:.2f} seconds\n")
     f.write(f"Maxmum amount of memory used: {torch.cuda.max_memory_reserved() / 1e9:.02f} GB\n\n")
-    f.write(f"Final loss: {lossf:.4f})\n")
+    f.write(f"Final loss: {lossf:.4f}\n")
 
     f.write("Model Config:")
     f.write(f"Layers: {n_layer}\n")
